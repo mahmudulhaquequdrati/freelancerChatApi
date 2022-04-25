@@ -5,7 +5,8 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const ConversationRoute= require('./routes/conversation')
 const MessageRoute= require('./routes/message')
-const UserRoute = require('./routes/users')
+const UserRoute = require('./routes/users');
+const port = process.env.PORT || 8800
 
 dotenv.config();
 
@@ -29,6 +30,6 @@ app.use('/api/messages', MessageRoute)
 app.use('/api/users', UserRoute)
 
 // where the server is listening
-app.listen(8800, () => {
+app.listen(port, () => {
   console.log("Backend server is running!");
 });
